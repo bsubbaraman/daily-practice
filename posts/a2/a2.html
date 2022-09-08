@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>sensing & position</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" type="image/jpg" href="../images/favicon_j.png"/>
+<link rel="stylesheet" type="text/css" href="../../style.css">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet"> 
+</head>
+
+<body>
+  <a class="anchor" id="top"></a>
+  <div class="topnav">
+    <a id="button_purp" href="../../index.html#top">Home</a>
+  </div>
+
+  <div class="hw-content">
+    <h2><mark>sensors & position</mark></h2>
+    <span class="post-meta"> last edited: 2021.10.14 </span>
+
+    <ul>
+      <li> <a href="#making"> making </a></li>
+      <ul>
+        <li> <a href="#first-steps"> ideation & setup</a></li>
+        <li> <a href="#sensor"> making the sensor </a></li>
+        <li> <a href="#firefly"> talking to firefly </a></li>
+        <li> <a href="#reflection"> reflections </a></li>
+      </ul>
+    </ul>
+    <br>
+    <hr>
+
+    <h2 id="making"> making! </h2>
+    <h3 id="first-steps"> ideation & setup </h3>
+    Kobakant's <a href="https://www.kobakant.at/DIY/">how to get what you want</a> was totally overwhelming
+    (in a good way), I felt like I got slapped in the face with ~a decade of really
+    great creative work. I spent a good amount of time just looking through all of the examples. I also ended
+    up watching <a href="http://artandcode.com/homemade/hannah-perner-wilson/">Hannah Perner-Wilson's Art&&Code
+    talk</a> from early this year which was a an interesting reflection on the recent turn in industry towards
+    e-textiles and what that means for Hannah's personal practice. Some of my favorite sensors were ones that
+    incorporated unconventional body parts for sensing (e.g. the <a href="https://www.kobakant.at/DIY/?p=8762">
+    knobbly knee sensor</a> or the <a href="https://www.kobakant.at/DIY/?p=7370">beaded sway sensor</a>). These
+    reminded me a bit of Myer's molecular embodiment argument; perhaps the prosthetic trope becomes muddied
+    when the interaction is a more awkward. In the context of this homework, any sensor I make will probably be pretty coarse, so I decided to 
+    lean into that. In the end, I settled on a facemask with fabric buttons which you have to press 
+    to modulate facial expression on a model. Like Topobo, my intent is to generate a playful interaction
+    that might have use/function "with the power turned off".
+
+    <br><br>
+
+    The other key setup step was to get my hand on a Windows machine! I could have used one in lab, but
+    I figured I should take the time now to get things setup on my computer since many digifab things are 
+    Mac unfriendly. So, I installed Windows using <a href="https://support.apple.com/boot-camp">Bootcamp</a>
+    which was a pretty painless process, though it took a bit of time to install Windows, then install all
+    the needed software on the new partition, etc. But I am now happy to help others with this if they want to
+    and run into problems!
+
+    <h3 id="sensor">making the sensor</h3>
+    I decided to use capacitive touch sensing. The Arduino <a href="https://www.arduino.cc/reference/en/libraries/capacitivesensor/">
+    CapSense library</a> let's you turn two Arduino pins into a capacitive sensor:
+    <br><br>
+    <div class="center">
+      <img class="fig_img" src="./images/capsense.png"><br/>
+      <span class="post-meta center"> image from the capsense docs</span>
+    </div>
+    <br><br>
+    My finger and conductive surface - in this case conductive fabric - form a capacitor, and the library
+    measures the timing of send/recieve pulses to sense touch, making it a very straightforward setup. I opted
+    for capacitive sensing because it can measure proximity as well as different 'kinds' of touch (hard press vs 
+    light touch, etc). This gives me a few different inputs for the interaction; I wanted to modulate facial expression
+    on a model, so this gave me opportunity for more variation with only two buttons. In the end I only measured
+    touch, but it was nice to have options. I sewed conductive fabric onto a face mask, roughly in the location of dimples.
+    I used 1 megaohm resistors for the capacitive sensing circuit and wound the resistor's ends to make 
+    them sewable, and put them on the outside so they wouldn't scratch my face:
+    <br><br>
+    <div class="gallery">
+      <img class="fig_img" src="./images/mask.png">
+      <img class="fig_img" src="./images/close.png">
+    </div>
+    <br><br>
+    I tested all the connections and was happy with how durable they seemed. 
+    
+    <h3 id="firefly">talking to firefly</h3>
+    
+    My Arduino sketch sends the capacitive sensing values over serial. In firefly, I use a <code>generic 
+    serial read</code> component to accept data. This component is driven by a <code>Trigger</code> on 
+    a 20ms interval. 
+    
+    <br><br>
+    <div class="center">
+      <img class="fig_img" src="./images/sensor-test.gif"><br/>
+      <span class="post-meta center"> data! </span>
+    </div>
+    <br><br>
+
+    My Rhino/Grasshopper geometry is super simple: a few circles make a smiley face, and a curve for
+    the mouth. By default, the face shows a frown. When both buttons on the mask are pressed simultaneously,
+    the curve is mirrored to turn into a smile:
+
+    <br/><br/>
+    <div class="gallery">
+      <video width="640" height="280" controls>
+        <source src="./images/push-to-smile.mp4" type="video/mp4">
+      </video>
+      <span class="post-meta center"> ):( </span>
+    </div>
+    <br/><br/>
+
+    You can see in the video that I just ran wire from the mask connections to the Arduino
+    sitting on my desk for testing. I had plans to then make a more realistic mouth model, and 
+    to have a more continuous interpolation between frowns, smiles, and everything in between - but the smiley is kind of funny to me, too.
+
+    <h3 id="reflection">reflections</h3>
+    Most on my mind while making my sensor was Leen et al's StrutModeling paper. There, the look & feel of the
+    struts (i.e. tubes and spheres) were more or less translated 1-to-1 in the digital design. There was
+    some smoothing, but the final object was still wireframey and functional. Though my final
+    gemoetry was rudimentary, I had a hard time thinking through what geometry would pair well with the e-textile
+    mask which, compared to the stuts, are bespoke/handmade. I sidestepped this in part by making
+    a hyper-specific interaction; the (bodily) interaction was the focus over the final geometry. 
+
+
+    
+  </div>
+</body>
+</html>
+

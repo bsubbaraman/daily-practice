@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>mechanisms & motion</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" type="image/jpg" href="../images/favicon_j.png"/>
+<link rel="stylesheet" type="text/css" href="../../style.css">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet"> 
+</head>
+
+<body>
+  <a class="anchor" id="top"></a>
+  <div class="topnav">
+    <a id="button_purp" href="../../index.html#top">Home</a>
+  </div>
+
+  <div class="hw-content">
+    <h2><mark>mechanisms & motion</mark></h2>
+    <span class="post-meta"> last edited: 2021.10.21 </span>
+
+    <ul>
+      <li> <a href="#making"> making </a></li>
+      <ul>
+        <li> <a href="#first-steps">ideation & setup</a></li>
+        <li> <a href="#mech">scissor mechanism</a></li>
+        <li> <a href="#sense">sensing state</a></li>
+        <li> <a href="#reflection"> reflections </a></li>
+      </ul>
+    </ul>
+    <br>
+    <hr>
+
+    <h2 id="making"> making! </h2>
+    <h3 id="first-steps"> ideation & setup </h3>
+    So many satisfying linkages in the world! I spent a while looking at Daniel Piker's (creator of Kangaroo) 
+    creations (<a href="https://twitter.com/KangarooPhysics">link</a>), as well as Twitter user Keishiro Ueki's linkages
+    (<a href="https://twitter.com/KeishiroUeki/status/1446799149777645573">link</a>), and this repository
+    of paper mechanisms from Kelli Anderson & Robby Kraft (<a href="http://cutfoldtemplates.com/">link</a>).
+    Interested in these paper mechanisms and FoldMecha's craft linkages, I decided to use cardboard as my mechanism
+    material. And while I was inspired by the many varieties of linkages in the world, I begin with a humble scissor
+    linkage, since its motion is satisfyingly expressive to me.
+    <br><br>
+    I found and printed these <a href="https://www.thingiverse.com/thing:3687946/files">cardboard rivets</a>
+    on Thingiverse to test. I found that a slightly scaled down size worked well.
+
+    <h3 id="mech">scissor mechanism</h3>
+    Before making a physical mechanism, I simulated one in Grasshopper using Kangaroo to test varying links of 
+    varying lengths. I settled on links 100mm long and 25mm wide; the simulation would be particularly helpful
+    if I wanted to combine mechanisms together to produce more complicated motion.
+    <br><br>
+    <div class="center">
+      <img class="fig_img" src="./images/sim.gif"><br/>
+      <span class="post-meta center"> snip snip</span>
+    </div>
+    <br><br>
+
+    I laser cut cardboard links with 3 4mm holes for the cardboard rivets:
+    <br><br>
+    <div class="center">
+      <img class="fig_img" src="./images/parts.png"><br/>
+      <span class="post-meta center">links!</span>
+    </div>
+    <br><br>
+    Then I assembled the linkage! Very fun to pop the rivets in and play with the resulting mechanism.
+
+    <br><br>
+    <div class="center">
+      <img class="fig_img" src="./images/linkage.gif"><br/>
+      <span class="post-meta center"> snip snip irl</span>
+    </div>
+    <br><br>
+    
+    <h3 id="sense">sensing state</h3>
+    Aligned with FoldMecha's findings about crafts extensibility, my original idea to sense state was to use
+    conductive fabric in a voltage divider, and calibrate it such that stretching the fabric would move anchor
+    points in Rhino. The values weren't nearly consistent enough to do this though, at least with my very lo-fi
+    prototype.
+    <br><br>
+    <div class="center">
+      <img class="fig_img" src="./images/stretch.png"><br/>
+      <span class="post-meta center">conductive fabric taped to handle</span>
+    </div>
+    <br><br>
+    Then I played around with mounting one linkage to a servo to be able to set its position,
+    but the little servo I had at home wasn't powerful enough. In the end, I returned to the conductive
+    fabric to make a button to sense a closed state. When closed, the Kangaroo Solver component's reset input
+    is triggered, closing the virtual mechanism.
+
+    <br/><br/>
+    <div class="gallery">
+      <video width="640" height="280" controls>
+        <source src="./images/final.mp4" type="video/mp4">
+      </video>
+      <span class="post-meta center"> /\ --> \/ </span>
+    </div>
+    <br/><br/>
+
+    <h3 id="reflection">reflections</h3>
+    I'm happy to get some exposure to Kangaroo to use in future projects. In particular, it'd be fun
+    to <i>send</i> data to microcontroller to control a project based on a Grasshopper simulation; I'm imagining
+    silly little linkage plotters. The appeal to 'craft' through conductive fabric is a bit half-hearted here; I think 
+    that combining the expressivity of mechanism motion with e.g. the creative spirit of 
+    Kobakant would make for some engaging artifacts!
+
+
+    
+  </div>
+</body>
+</html>
+

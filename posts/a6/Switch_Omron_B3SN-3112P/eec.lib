@@ -1,0 +1,56 @@
+EESchema-LIBRARY Version 2.4
+#encoding utf-8
+#
+# Omron B3SN-3112P
+#
+DEF B3SN-3112P SW 0 40 Y Y 1 L N
+F0 "SW" 0 400 50 H V L CNN 
+F1 "B3SN-3112P" 0 500 50 H V L CNN 
+F2 "Omron-B3SN-3112P-*" 0 600 50 H I L CNN 
+F3 "https://omronfs.omron.com/en_US/ecb/products/pdf/en-b3sn.pdf" 0 700 50 H I L CNN 
+F4 "+70°C" 0 800 50 H I L CNN "ambient temperature range high"
+F5 "-25°C" 0 900 50 H I L CNN "ambient temperature range low"
+F6 "No" 0 1000 50 H I L CNN "automotive"
+F7 "Switch" 0 1100 50 H I L CNN "category"
+F8 "50mA" 0 1200 50 H I L CNN "contact current rating"
+F9 "100mΩ" 0 1300 50 H I L CNN "contact resistance"
+F10 "Electromechanical" 0 1400 50 H I L CNN "device class L1"
+F11 "Switches" 0 1500 50 H I L CNN "device class L2"
+F12 "Tactile Switches" 0 1600 50 H I L CNN "device class L3"
+F13 "SWITCH TACTILE SPST-NO 0.05A 24V" 0 1700 50 H I L CNN "digikey description"
+F14 "SW262CT-ND" 0 1800 50 H I L CNN "digikey part number"
+F15 "100000Cycles" 0 1900 50 H I L CNN "electromechanical life"
+F16 "Yes" 0 2000 50 H I L CNN "lead free"
+F17 "04668df94270eb77" 0 2100 50 H I L CNN "library id"
+F18 "Omron" 0 2200 50 H I L CNN "manufacturer"
+F19 "Surface Mount" 0 2300 50 H I L CNN "mount"
+F20 "Switch Tactile N.O. SPST Round Button J-Bend 0.05A 24VDC 50000Cycle 1.57N SMD Embossed Tape" 0 2400 50 H I L CNN "mouser description"
+F21 "653-B3SN-3112P" 0 2500 50 H I L CNN "mouser part number"
+F22 "1.57N" 0 2600 50 H I L CNN "operating force"
+F23 "SMT_SW_6MM0_6MM0" 0 2700 50 H I L CNN "package"
+F24 "Yes" 0 2800 50 H I L CNN "rohs"
+F25 "3.4mm" 0 2900 50 H I L CNN "standoff height"
+F26 "+70°C" 0 3000 50 H I L CNN "temperature range high"
+F27 "-25°C" 0 3100 50 H I L CNN "temperature range low"
+F28 "SPST-NO" 0 3200 50 H I L CNN "throw configuration"
+F29 "24V" 0 3300 50 H I L CNN "voltage rating DC"
+DRAW
+X 1 1 0 0 200 D 40 0 1 1 P 
+X 2 2 0 -200 200 U 40 0 1 1 P 
+X 3 3 400 0 200 D 40 0 1 1 P 
+X 4 4 400 -200 200 U 40 0 1 1 P 
+X 5 5 200 300 100 D 40 0 1 1 P 
+P 2 1 1 0 400 -100 300 -100 N
+P 2 1 1 0 0 -100 100 -100 N
+C 130 -100 20 1 1 0 N
+C 270 -100 20 1 1 0 N
+P 2 1 1 0 150 -90 250 -30 N
+P 2 1 1 0 200 200 200 100 N
+P 2 1 1 0 100 100 300 100 N
+P 2 1 1 0 300 100 300 50 N
+P 2 1 1 0 300 50 100 50 N
+P 2 1 1 0 100 50 100 100 N
+ENDDRAW
+ENDDEF
+#
+# End Library

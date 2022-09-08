@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title></title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" type="image/jpg" href="../images/favicon_j.png"/>
+<link rel="stylesheet" type="text/css" href="../../style.css">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet"> 
+</head>
+
+<body>
+  <a class="anchor" id="top"></a>
+  <div class="topnav">
+    <a id="button_purp" href="../../index.html#top">Home</a>
+  </div>
+
+  <div class="hw-content">
+    <h2><mark>making pcbs</mark></h2>
+    <span class="post-meta"> last edited: 2021.10.27 </span>
+
+    <ul>
+      <li> <a href="#making"> making </a></li>
+      <ul>
+        <li> <a href="#setup">setup</a></li>
+        <li> <a href="#milling">milling</a></li>
+        <li> <a href="#reflection"> reflections </a></li>
+      </ul>
+    </ul>
+    <br>
+    <hr>
+
+    <h2 id="making"> making! </h2>
+    <h3 id="setup"> setup </h3>
+    This week, we were given files to mill on the Othermill! First we test milled an ATtiny board from Nadya.
+    We'll build on this to modify more complex PCBs next week.
+
+    <br>
+
+    The Bantam tools software is a little bit funny to use, but generally straightforward. Some general reminders for 
+    my long-term memory:
+    <ul>
+      <li> NPTH drill files don't work on machine for some reason, so manually set the file if the software auto-fills</li>
+      <li> Default trace depth is 0.15mm, that's reasonable. Default trace clearance is also 0.15 mm, can up that to make it easier to solder at first </li>
+      <li> Be sure to add a sacrificial layer below your material</li>
+      <li> Measure the material in various places with calipers to set both material offset and material settings </li>
+      <li> Can add a large z plan offset to test mill in the air and make sure everything looks good</li>
+    </ul>
+
+    <h3 id="milling"> milling </h3>
+    My board turned out okay!
+    <br><br>
+    <div class="center">
+      <img class="fig_img" src="./images/first.png"><br/>
+      <span class="post-meta center">my very first milled board</span>
+    </div>
+    <br><br>
+    Two notes: first, the holes are about a centimeter off. I had set the x & y plan offset to be 10 mm for each cut, so I <i>think</i>
+    that when I milled the traces, the plan offset didn't propogate through in y. Doing this again, it's very important to actually check the 
+    preview to make sure things look reasonable!
+
+    Second, Nadya noted that there are a few small copper fingers left in my traces, which will cause shorts/bad connections
+    when we populate the board. To get rid of these, we can run it under water and visually confirm everything looks good.
+
+    As a final small success, we made a simple LED circuit in KiCad during class, which I then milled and soldered. It worked- hooray!
+    <br><br>
+    <div class="center">
+      <img class="fig_img" src="./images/blinky.gif"><br/>
+      <span class="post-meta center">blinky</span>
+    </div>
+    <br><br>
+    <h3 id="reflection">reflections</h3>
+    While designing in Kicad and surface mount soldering will both take a good amount of time, I'm actually
+    quite surprised at how approachable the actual milling process was! I've been more or less stuck to the breadboard
+    for my electronics career thus far, so I'm really excited to be able to mill PCBs now.
+    <br><br>
+
+
+
+
+
+
+    
+  </div>
+</body>
+</html>
+

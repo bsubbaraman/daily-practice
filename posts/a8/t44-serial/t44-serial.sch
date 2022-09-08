@@ -1,0 +1,313 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L MCU_Microchip_ATtiny:ATtiny44A-SSU U1
+U 1 1 61A424CA
+P 5350 3250
+F 0 "U1" H 4820 3296 50  0000 R CNN
+F 1 "ATtiny44A-SSU" H 4820 3205 50  0000 R CNN
+F 2 "Package_SO:SOIC-14_3.9x8.7mm_P1.27mm" H 5350 3250 50  0001 C CIN
+F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/doc8183.pdf" H 5350 3250 50  0001 C CNN
+	1    5350 3250
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:AVR-ISP-6 J2
+U 1 1 61A4264C
+P 7850 2700
+F 0 "J2" H 7570 2796 50  0000 R CNN
+F 1 "AVR-ISP-6" H 7570 2705 50  0000 R CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_2x03_P2.54mm_Vertical_SMD" V 7600 2750 50  0001 C CNN
+F 3 " ~" H 6575 2150 50  0001 C CNN
+	1    7850 2700
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R_US R1
+U 1 1 61A42853
+P 8700 2800
+F 0 "R1" V 8495 2800 50  0000 C CNN
+F 1 "10K" V 8586 2800 50  0000 C CNN
+F 2 "Resistor_SMD:R_1206_3216Metric" V 8740 2790 50  0001 C CNN
+F 3 "~" H 8700 2800 50  0001 C CNN
+	1    8700 2800
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:Resonator Y1
+U 1 1 61A42CDD
+P 6500 3650
+F 0 "Y1" H 6500 3898 50  0000 C CNN
+F 1 "Resonator" H 6500 3807 50  0000 C CNN
+F 2 "Crystal:Resonator_SMD_muRata_CSTxExxV-3Pin_3.0x1.1mm_HandSoldering" H 6475 3650 50  0001 C CNN
+F 3 "~" H 6475 3650 50  0001 C CNN
+	1    6500 3650
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0101
+U 1 1 61A42E99
+P 7750 3250
+F 0 "#PWR0101" H 7750 3000 50  0001 C CNN
+F 1 "GND" H 7755 3077 50  0000 C CNN
+F 2 "" H 7750 3250 50  0001 C CNN
+F 3 "" H 7750 3250 50  0001 C CNN
+	1    7750 3250
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0102
+U 1 1 61A42ECF
+P 5350 4300
+F 0 "#PWR0102" H 5350 4050 50  0001 C CNN
+F 1 "GND" H 5355 4127 50  0000 C CNN
+F 2 "" H 5350 4300 50  0001 C CNN
+F 3 "" H 5350 4300 50  0001 C CNN
+	1    5350 4300
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0103
+U 1 1 61A42F05
+P 6500 3900
+F 0 "#PWR0103" H 6500 3650 50  0001 C CNN
+F 1 "GND" H 6505 3727 50  0000 C CNN
+F 2 "" H 6500 3900 50  0001 C CNN
+F 3 "" H 6500 3900 50  0001 C CNN
+	1    6500 3900
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6500 3850 6500 3900
+Wire Wire Line
+	7750 3100 7750 3250
+Wire Wire Line
+	5350 4150 5350 4300
+$Comp
+L power:VCC #PWR0104
+U 1 1 61A4308D
+P 5350 2250
+F 0 "#PWR0104" H 5350 2100 50  0001 C CNN
+F 1 "VCC" H 5367 2423 50  0000 C CNN
+F 2 "" H 5350 2250 50  0001 C CNN
+F 3 "" H 5350 2250 50  0001 C CNN
+	1    5350 2250
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:VCC #PWR0105
+U 1 1 61A430A7
+P 7750 2100
+F 0 "#PWR0105" H 7750 1950 50  0001 C CNN
+F 1 "VCC" H 7767 2273 50  0000 C CNN
+F 2 "" H 7750 2100 50  0001 C CNN
+F 3 "" H 7750 2100 50  0001 C CNN
+	1    7750 2100
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:VCC #PWR0106
+U 1 1 61A430BA
+P 9000 2800
+F 0 "#PWR0106" H 9000 2650 50  0001 C CNN
+F 1 "VCC" H 9017 2973 50  0000 C CNN
+F 2 "" H 9000 2800 50  0001 C CNN
+F 3 "" H 9000 2800 50  0001 C CNN
+	1    9000 2800
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8850 2800 9000 2800
+Wire Wire Line
+	8250 2800 8550 2800
+Wire Wire Line
+	5950 3850 6100 3850
+Wire Wire Line
+	8250 2500 8250 2250
+Wire Wire Line
+	8250 2250 8550 2250
+Wire Wire Line
+	8250 2600 8300 2600
+Wire Wire Line
+	8300 2600 8300 2350
+Wire Wire Line
+	8300 2350 8550 2350
+Wire Wire Line
+	8250 2700 8350 2700
+Wire Wire Line
+	8350 2700 8350 2500
+Wire Wire Line
+	8350 2500 8550 2500
+Text Label 8300 2250 0    50   ~ 0
+MISO
+Text Label 8350 2350 0    50   ~ 0
+MOSI
+Text Label 8350 2500 0    50   ~ 0
+SCK
+Text Label 8400 2800 0    50   ~ 0
+RESET
+Text Label 5950 3850 0    50   ~ 0
+RESET
+Wire Wire Line
+	5350 2250 5350 2350
+$Comp
+L power:VCC #PWR0107
+U 1 1 61A43874
+P 3950 2050
+F 0 "#PWR0107" H 3950 1900 50  0001 C CNN
+F 1 "VCC" H 3967 2223 50  0000 C CNN
+F 2 "" H 3950 2050 50  0001 C CNN
+F 3 "" H 3950 2050 50  0001 C CNN
+	1    3950 2050
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0108
+U 1 1 61A43887
+P 3950 2650
+F 0 "#PWR0108" H 3950 2400 50  0001 C CNN
+F 1 "GND" H 3955 2477 50  0000 C CNN
+F 2 "" H 3950 2650 50  0001 C CNN
+F 3 "" H 3950 2650 50  0001 C CNN
+	1    3950 2650
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C1
+U 1 1 61A43935
+P 3950 2350
+F 0 "C1" H 4065 2396 50  0000 L CNN
+F 1 "0.1UF" H 4065 2305 50  0000 L CNN
+F 2 "Capacitor_SMD:C_1206_3216Metric" H 3988 2200 50  0001 C CNN
+F 3 "~" H 3950 2350 50  0001 C CNN
+	1    3950 2350
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3950 2200 3950 2050
+Wire Wire Line
+	3950 2500 3950 2650
+Wire Wire Line
+	7750 2100 7750 2200
+Wire Wire Line
+	5950 3050 6150 3050
+Text Label 6000 3050 0    50   ~ 0
+SCK
+$Comp
+L Connector:Conn_01x06_Male J1
+U 1 1 61A44543
+P 7750 4150
+F 0 "J1" H 7856 4528 50  0000 C CNN
+F 1 "Conn_01x06_Male" H 7856 4437 50  0000 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x06_P2.54mm_Horizontal" H 7750 4150 50  0001 C CNN
+F 3 "~" H 7750 4150 50  0001 C CNN
+	1    7750 4150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7950 3950 8500 3950
+Wire Wire Line
+	7950 4050 8500 4050
+Wire Wire Line
+	7950 4150 8500 4150
+Wire Wire Line
+	7950 4250 8500 4250
+Wire Wire Line
+	7950 4350 8500 4350
+Wire Wire Line
+	7950 4450 8500 4450
+Text Label 8300 3950 0    50   ~ 0
+GND
+Text Label 8300 4050 0    50   ~ 0
+CTS
+Text Label 8300 4150 0    50   ~ 0
+VCC
+Text Label 8300 4250 0    50   ~ 0
+TX
+Text Label 8300 4350 0    50   ~ 0
+RX
+Text Label 8300 4450 0    50   ~ 0
+RTS
+Wire Wire Line
+	5950 2650 6150 2650
+Wire Wire Line
+	5950 2750 6150 2750
+Text Label 6000 2650 0    50   ~ 0
+TX
+Text Label 6000 2750 0    50   ~ 0
+RX
+Wire Wire Line
+	5950 3650 6350 3650
+Wire Wire Line
+	6650 3650 6700 3650
+Wire Wire Line
+	6700 3650 6700 3500
+Wire Wire Line
+	6700 3500 6250 3500
+Wire Wire Line
+	6250 3500 6250 3550
+Wire Wire Line
+	6250 3550 5950 3550
+Wire Wire Line
+	5950 3150 6150 3150
+Wire Wire Line
+	5950 3250 6150 3250
+Text Label 5950 3150 0    50   ~ 0
+MISO
+Text Label 5950 3250 0    50   ~ 0
+MOSI
+$Comp
+L Device:LED D1
+U 1 1 61A6E403
+P 6200 3350
+F 0 "D1" H 6193 3095 50  0000 C CNN
+F 1 "LED" H 6193 3186 50  0000 C CNN
+F 2 "LED_SMD:LED_1206_3216Metric" H 6200 3350 50  0001 C CNN
+F 3 "~" H 6200 3350 50  0001 C CNN
+	1    6200 3350
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	5950 3350 6050 3350
+Wire Wire Line
+	6350 3350 6550 3350
+Wire Wire Line
+	6950 3350 6950 3450
+$Comp
+L power:GND #PWR0109
+U 1 1 61A70EDB
+P 6950 3450
+F 0 "#PWR0109" H 6950 3200 50  0001 C CNN
+F 1 "GND" H 6955 3277 50  0000 C CNN
+F 2 "" H 6950 3450 50  0001 C CNN
+F 3 "" H 6950 3450 50  0001 C CNN
+	1    6950 3450
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R_US R2
+U 1 1 61A71B88
+P 6700 3350
+F 0 "R2" V 6495 3350 50  0000 C CNN
+F 1 "1K" V 6586 3350 50  0000 C CNN
+F 2 "Resistor_SMD:R_1206_3216Metric" V 6740 3340 50  0001 C CNN
+F 3 "~" H 6700 3350 50  0001 C CNN
+	1    6700 3350
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	6850 3350 6950 3350
+$EndSCHEMATC

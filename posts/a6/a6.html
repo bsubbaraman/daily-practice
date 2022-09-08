@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>designing pcbs</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" type="image/jpg" href="../images/favicon_j.png"/>
+<link rel="stylesheet" type="text/css" href="../../style.css">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet"> 
+</head>
+
+<body>
+  <a class="anchor" id="top"></a>
+  <div class="topnav">
+    <a id="button_purp" href="../../index.html#top">Home</a>
+  </div>
+
+  <div class="hw-content">
+    <h2><mark>designing pcbs</mark></h2>
+    <span class="post-meta"> last edited: 2021.11.15 </span>
+
+    <ul>
+      <li> <a href="#making"> making </a></li>
+      <ul>
+        <li> <a href="#circuit">circuit design</a></li>
+        <li> <a href="#fab">milling & soldering</a></li>
+        <li> <a href="#reflection"> reflections </a></li>
+      </ul>
+    </ul>
+    <br>
+    <hr>
+
+    <h2 id="making"> making! </h2>
+    <h3 id="circuit"> circuit design </h3>
+    Building on last week's initial foray into PCBs, we designed a circuit with an input and output. I like the satisfying clicks of smol buttons on boards,
+    so I decided to use a button as input and two LEDs for output (2, because if one ended up not working for some reason, maybe the other would :). Beginning from
+    reference board, I made the schematic in Kicad: 
+
+    <br><br>
+    <div class="center">
+      <img class="fig_img" src="./images/schematic.png"><br/>
+      <span class="post-meta center">circuit schematic</span>
+    </div>
+    <br><br>
+
+    The headers for the programmer and power headers largely didn't change, and the 5V regulator was swapped to match the ones
+    we have in inventory (more on that later...). The LEDs are in series with 1kΩ resistor, which is the lowest value
+    we have; with a ~2V drop from the LED this will give us around 3mA of current which is low, but things should still light up. The button circuit is
+    normally open and connected through a 10k pull-down resistor to ground, and gets pulled high when pressed. Navigating the Kicad interface of symbols and
+    footprints was a bit confusing to start but I think I got the hang of it by the end. 
+
+    <br><br>
+
+    I decided to mill the outline of the board in the shape of a UFO, with the LEDs towards the bottom of a 'beam of light'. But for whatever reason while wiring the traces, it was
+    confusing to me when the components were spaced far away. So, I started by wiring things 'close together' and then moved things around to match fit into the desired
+    shape. I created the UFO outline in illustrator just using a few ellipses and polygons, exported it as a dxf, and imported that into the 'edge cuts' layer of pcbnew.
+    While routing traces, I got to a stage where things were <i>mostly</i> done, but I couldn't get my button input to the ATtiny pin because it was blocked by the LED traces.
+    I ended up just changing the schematic to use different pins, which made things easy to connect. Finally, I added a via at the very top of the board so I could
+    hang this as e.g. a tree ornament.
+
+    <br><br>
+    <div class="center">
+      <img class="fig_img" src="./images/pcb.png"><br/>
+      <span class="post-meta center">pcb design with imported dxf edge cuts</span>
+    </div>
+    <br><br>
+
+    <h2 id="fab">milling & soldering</h3>
+    <h3>launch 1: flopnik</h3>
+    I milled my first board using mostly default settings in the Bantam software, with the trace clearance increased to 0.3mm. The design is pretty big and
+    <i>juuuuust</i> fits onto the boards that we were given, so I had to pay special attention to the plan offset to make sure it didn't go off the board. I also 
+    added a bigger sacrificial layer to accommadate. The milling process itself was fun and painless. Because I didn't have much room in the y-direction to offset the material, it was a bit hard to unload.
+    <br><br>
+    <div class="center">
+      <img class="fig_img" src="./images/milled.png"><br/>
+      <span class="post-meta center">milled board</span>
+    </div>
+    <br><br>
+    My first soldering job started a bit sloppy as I got used to surface mount soldering. Key points of drama: I didn't get the programmer header pins aligned straight
+    at first, and when I tried to rotate it, I pulled a bit of copper off the board. At other points I got blobby and used desoldering braid to undo it. Then, I tried to
+    program the board. I started installing packages for mac to use avrdude, but ended up finding that using the ISP programmer but through the Arduino IDE was more 
+    straightforward- <a href="http://highlowtech.org/?p=1695">this walkthrough</a> was helpful. I plugged everying in, and... device not found!
+    <br><br>
+    Nadya identified some points to look at and in particular, we found that the ground and VCC pins were shorted in the voltage regulator. After some investigation I 
+    decided to re-mill with bigger trace clearances.
+
+    <h3>launch 2: flopnik, but tidier</h3>
+    At this point I felt pretty comfortable with the Othermill. I went through the same process, using a trace clearance of 1mm (upped from 0.3mm). This took about
+    3 times longer to mill the traces, but still only 18 minutes. When I returned to the soldering station, there was a magnifying lens + lamp to use! Soldering felt
+    a good bit easier with this- I'm not sure how much better it turned out, but it seemed tidier.  
+
+    <br><br>
+    <div class="center">
+      <img class="fig_img" src="./images/solder.png"><br/>
+      <span class="post-meta center">soldering, this time with ~magnification~</span>
+    </div>
+
+    When programming again, I ran into the same problem. I did more multimeter testing and ended up finding the same thing as before: the ground and VCC pins 
+    were connected on the voltage regulator. Confused, I pulled up the datasheet and found... those pins are supposed to be connected! But they are not VCC & ground, but 
+    are both VCC! Looks like I clicked the wrong symbol when I swapped the regulators, so the pins were wrong. Sigh. I swapped to the correct pinout, and milled again.
+
+    <h3>launch 3: lift-off!</h3>
+    Third time's the charm! Soldering this time went significantly faster. In the moment of 
+    truth, I uploaded my sketch, and... it worked! My code has the LEDs blink back and forth on a button 
+    press.
+
+    <br/><br/>
+    <div class="gallery">
+      <video width="640" height="280" controls>
+        <source src="./images/final.mp4" type="video/mp4">
+      </video>
+      <span class="post-meta center"> spooky </span>
+    </div>
+    <br/><br/>
+    Here's the microcontroller code:
+    <iframe src=https://create.arduino.cc/editor/hardwhere/9c230b99-b95c-4769-986d-7203aec2fb35/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
+			
+  
+
+    <h3 id="reflection">reflections</h3>
+    I had a lot of fun with this, despite pinout problems. Having never moved very far from the breadboard,
+    comfortability with e.g. Kicad, milling, and surface mount soldering was something I was particularly
+    looking forward in this class. I think it will be tremendously helpful in future projects (make everything
+    smaller & more secure!). It was also an enjoyable experience, soldering was sneakily meditative. 
+
+    <br><br>
+
+
+
+    
+  </div>
+</body>
+</html>
+

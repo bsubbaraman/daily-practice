@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>making shoes</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" type="image/jpg" href="../images/favicon_j.png"/>
+<link rel="stylesheet" type="text/css" href="../../style.css">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet"> 
+</head>
+
+<body>
+  <a class="anchor" id="top"></a>
+  <div class="topnav">
+    <a id="button_purp" href="../../index.html#top">Home</a>
+  </div>
+
+  <div class="hw-content">
+    <h2><mark>making shoes</mark></h2>
+    <span class="post-meta"> last edited: 2021.10.07 </span>
+
+    <ul>
+      <li> <a href="#making"> making </a></li>
+      <ul>
+        <li> <a href="#first-steps"> first steps </a></li>
+        <li> <a href="#fabric"> making the fabric </a></li>
+        <li> <a href="#assembly"> assembly </a></li>
+        <li> <a href="#reflection"> reflections </a></li>
+      </ul>
+      <li> <a href="#reading"> reading </a></li>
+    </ul>
+    <hr>
+
+    <h2 id="making"> making! </h2>
+    <h3 id="first-steps"> first steps </h3>
+    Despite saying that I wanted to be a shoe designer when I grow up in a 3rd grade school project,
+    I have next to no idea how shoes are made. Following the hybrid fabrication workflows of DuoSkin 
+    & ExoSkin from this week's papers, I started by 
+    <a href="https://www.instructables.com/craft/howto/shoe/">reading a bit</a> about
+    'analog' shoe making processes. I learned the process normally starts from a model of your foot (a <i>last</i>),
+    which you can draw your pattern on, then remove to transfer the pattern onto the material of your choice.
+    In the sprit of these hybrid fabrication processes,
+    I decided to use this cut and sew method of shoe making combined with some digital 
+    fabrication technology. For the design, I went with a pair of slippers/flats; it seemed like a simple pattern & geometry
+    to start from. I just sketched an outline of this design on paper. By doing so,
+    I made these shoes specific to me.
+    
+    <br/><br/>
+    <div class="center">
+      <img class="fig_img" src="./images/cardboard.png"><br/>
+      <span class="post-meta">upper pattern for of my slipper/shoe/thing</span>
+    </div>
+    <br/><br/>
+
+    <h3 id="fabric">making the "fabric"</h3>
+
+    I've liked the look of <a href="https://www.nike.com/flyknit">Nike Flyknit shoes</a>,
+    where the designers use strands of yarn in different knit patterns to make some parts more sturdy, or 
+    breathable, etc. This customization based on foot data is reminiscent of the mechanical metamaterial structures
+    for shoe soles discussed in class. I don't have the time (or data) to make anything so functional,
+    but I want to use this as an aesthetic inspiration. 
+    To achieve a flexible, wireframe-y looking ""fabric"" to make my shoe out of, I tried 3D printing sheets of single
+    width extrusions. I did this using my p5.fab library. Here's a little test swatch of single layer height:
+
+    <br/><br/>
+    <div class="center">
+      <img class="fig_img" src="./images/test.jpg"><br/>
+      <span class="post-meta">bendy</span>
+    </div>
+    <br/><br/>
+
+    Though I tried single, double, and triple layer heights, I found that a single layer height
+    was durable enough for these purposes and decreased fabrication time. From here I made two aesthetic-driven
+    choices: in analogy to the functional tight/loose knits in Flyknits, I varied the spacing between extrusions.
+    This was also a somewhat strategic decision to decrease print time:
+
+    <br/><br/>
+    <div class="gallery">
+      <img class="fig_img" src="./images/base.png">
+      <img class="fig_img" src="./images/spacing.png">
+      <span class="post-meta center"> toolpath viz and associated print using varied spacing.
+      the edges curl quite a bit; i just treat the edges as sacrificial.
+      </span>
+    </div>
+    <br/><br/>
+
+    And for a bit of "colorwork", I swapped filaments to white and printed the same pattern again offset a bit. 
+    The result:
+    <br/><br/>
+    <div class="center">
+      <img class="fig_img" src="./images/color.png"><br/>
+      <span class="post-meta">another color</span>
+    </div>
+    <br/><br/>
+
+    <!-- <pre>
+      <code>
+        code block
+      </code>
+    </pre> -->
+
+
+    So, I was able to make sheets of my material by printing one in one filament, swapping & flushing 
+    the old color, and printing in the second. Each filament color prints in about 15 minutes, so I'm able to
+    make a 175mmx175mm sheet of 'fabric' in just over a half hour. Unfortunately my foot is larger
+    than the Ender print bed, so I needed two sheets per shoe upper --> 4 sheets total.
+    
+    <h3 id="assembly">assembly</h3>
+    I made the (perhaps unwise) decision to take this homework assignment
+    as an opportunity to learn how to sew. The shoe general assembly process was to:
+    <ul>
+      <li>cut the material based on my shoe pattern above; to do this, I just taped the sheets together. (I 
+        couldn't start by sewing them, otherwise I'd cut right through what I'd sewn). </li>
+      <br/><br/>
+      <div class="center">
+        <img class="fig_img" src="./images/cut.png"><br/>
+      </div>
+      <br/><br/>
+      <li>sew the two sheets together</li>
+      <br/><br/>
+      <div class="center">
+        <img class="fig_img" src="./images/sew-sheets.png"><br/>
+      </div>
+      <br/><br/>
+      <li>sew the sheets to the sole material. I had originally planned to sew directly onto an 
+        old shoe insert that I had; however, I found the material ended up being too difficult. In a 
+        Project Runway Unconventional Material Challenge Moment™, I instead used the packaging
+        from some Protopasta filament, mostly for the silver color. This is not a great sole material choice.
+      </li> 
+      <br/><br/>
+      <div class="center">
+        <img class="fig_img" src="./images/sole-sew.png"><br/>
+      </div>
+      <br/><br/>
+    </ul>
+
+    The result is something that <i>kinda</i> looks like a shoe, in form if not function:
+    <br><br>
+    <div class="gallery">
+      <img class="fig_img" src="./images/shoe-1.png">
+      <img class="fig_img" src="./images/shoe-2.png">
+      <img class="fig_img" src="./images/shoe-3.png">
+      <span class="post-meta center"> "what are thoooooooose"
+      </span>
+    </div>
+    <br><br>
+
+    The final products are wildly different sizes and borderline unwearable,
+    but here they are on the foot! I ended up inserting the shoe inserts that 
+    I was going to sew into.
+
+    <br/><br/>
+      <div class="center">
+        <img class="fig_img" src="./images/wear.png"><br/>
+        <span class="post-meta center"> 'designing for frustration', or something
+        </span>
+      </div>
+      <br/><br/>
+
+    <h3 id="reflection">reflections</h3>
+    Sewing skills aside, I thought that printing over the pattern in two colors opened
+    up some interesting possibilities for printing with the p5.fab system. Color is such 
+    an important part of the visual design process with p5.js, and I'd like to capture
+    a bit of that. It'd be fun to get it running on a dual-extruder setup.
+    <br><br>
+    In terms of process: printing sheets significantly sped up fabrication time relative to printing e.g. a 
+    complete shoe, but the material wasn't terribly conducive to sewing. A tighter pattern might have made it
+    a bit easier (though that would also increase print time). I thought of the sheets as raw fabric to
+    cut up after the fact; a better idea might be to print the final pattern directly 
+    so that we don't print excess material (e.g. the shoe hole), and would make 
+    the shape & size more easily replicable.
+
+    <h2 id="reading"> readings! </h2>
+    <h3>DuoSkin</h3>
+    In Duoskin, the authors explore the use of gold leaf to fabricate 
+    low-cost epidermal electronics otherwise constrained to the medical industry. 
+    They present their rapid prototyping process which primarily relies on gold leaf as a 
+    conductor for different I/O modalities, demonstrate its use through functional devices, 
+    technical evaluation for durability/robustness, and a workshop which allows people to 
+    customize their electronics. They suggest on-skin devices to be a medium for expressivity 
+    and argue for aesthetic control of the user. Last line is possibly interesting in relation to Beating the Meat paper.
+
+    <h3>ExoSkin</h3>
+    In Exoskin, the authors explore hybrid fabrication workflows 
+    (i.e. using both analog and digital methods) for on-body printing. 
+    To do so, they contribute a set of design considerations for on-body printing 
+    (material choice, machine configs, content, and workflows) and the present their 
+    system exoskin which is a proof-of-concept system which permits design & fabrication on-body. 
+    The find that this system is technically feasible and relevant for domain specific applications.
+
+    <h3>Exploring mechanical meta-material structures through personalised shoe sole design</h3>
+    In this paper, the authors explore combinations of metamaterial structures to design shoe soles. 
+    To do so, they analyze foot/gait data and map the results to different MMS with relevant behavior. 
+    They fabricate a shoe sole and comment on the process. 
+    The most notable finding is that there are limited availability 
+    for software tools which enable exploration of metamaterials. 
+    The outline what such software tools should enable to permit efficient exploration of MMS in practice.
+
+    <h3>Prosthetic Imagination</h3>
+    This paper takes an in-depth look at the ramifications of technology as ‘prosthesis’. T
+    he author begins by critiquing various existing theories regarding prosthesis, 
+    teasing out cultural factors from an otherwise medically-based trope. These include 
+    repetitive labor in the Ford factory, financial compensation based on gender & sexuality,
+     and misguided laws of averages invoked for e.g. airbag safety guidelines. They go 
+     on to turn prosthesis as supplementing an existing deficiency on its head, instead 
+     suggesting that prosthesis provides the deficiency by providing normative values of wholeness. 
+     They bring this into the economic-discursive realm through a discussion of consumerism & ‘freedom’. 
+     They conclude with limitations of prosthesis as an analytical tool, arguing that identity differences 
+     & their material consequences are ‘incomprehensible’ through a lens of prosthetics.
+
+     <h3>Beating the Meat</h3>
+     This paper examines the tension between body & machine, in large part through 
+     first-person experience with leg amputation.  
+
+  </div>
+</body>
+</html>
+

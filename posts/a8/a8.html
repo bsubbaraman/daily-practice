@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>comms</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" type="image/jpg" href="../images/favicon_j.png"/>
+<link rel="stylesheet" type="text/css" href="../../style.css">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet"> 
+</head>
+
+<body>
+  <a class="anchor" id="top"></a>
+  <div class="topnav">
+    <a id="button_purp" href="../../index.html#top">Home</a>
+  </div>
+
+  <div class="hw-content">
+    <h2><mark>communication</mark></h2>
+    <span class="post-meta"> last edited: 2021.12.02 </span>
+
+    <ul>
+      <li> <a href="#making"> making </a></li>
+      <ul>
+        <li> <a href="#circuit">circuit design & fabrication</a></li>
+        <li> <a href="#code">firmware</a></li>
+        <li> <a href="#reflection"> reflections </a></li>
+      </ul>
+    </ul>
+    <br>
+    <hr>
+
+    <h2 id="making"> making! </h2>
+    <h3 id="circuit"> circuit design & fabrication </h3>
+    Time to talk to the ATtiny44! Very exciting. My final project idea involves setting stepper motor positions
+    based on input to the computer, so this homework assignment will hopefully be a small step towards that. For ease,
+    I start with just turning on & off an LED:
+
+    <br><br>
+    <div class="center">
+      <img class="fig_img" src="./images/schematic.png"><br/>
+      <span class="post-meta center">circuit schematic</span>
+    </div>
+    <br><br>
+
+    Everything is similar to prior week boards, with the addition of a 20 Mhz crystal for use as an external clock,
+    which will help speed of communication rather than the tiny44's internal 8MHz. Nadya provided the board design 
+    since it was an abbreviated week from Thanksgiving break, so my humble addition is an LED + resistor :)
+
+    <br><br>
+
+    The PCB makes a small but mighty change from prior weeks: it's double sided! The bottom is just a ground pour,
+    with vias to connect the top to bottom. Ground often acts as a moat, blocking traces from getting where they need
+    to go, so this is Very Exciting Stuff to me.
+
+    <br><br>
+    <div class="center">
+      <img class="fig_img" src="./images/pcb.png"><br/>
+      <span class="post-meta center">pcb with bottom side ground</span>
+    </div>
+    <br><br>
+
+    The only soldering hiccups were with (1) the resonator, which have very thin copper pads which I was a bit sloppy 
+    with, and (2) the headers, which I mindlessly soldered the wrong way round; the long end should poke
+    poke out the bottom so that the serial cable can securely lock in. It still works, but I have to push down on the
+    cable to make sure it stays secure. Definitely a no-no for the final project. For the vias, I stripped a bit
+    of wire, straightened it by twisting with tweezers, and soldered to the top and bottom.
+
+    <br><br>
+    <div class="center">
+      <img class="fig_img" src="./images/board.png"><br/>
+      <span class="post-meta center">pcb design with bottom side ground</span>
+    </div>
+    <br><br>
+
+    <h3 id="code"> firmware </h3>
+    I tried firmware in 2 flavors- the .c example firmware from Nadya, and one using Arduino's Software Serial library.
+    Here is Nadya's example firmware echoing back messages; when the buffer is full, the LED connected to Pin7
+    turns on:
+
+    <br/><br/>
+    <div class="gallery">
+      <video width="640" height="280" controls>
+        <source src="./images/echo.mp4" type="video/mp4">
+      </video>
+      <span class="post-meta center"> hi :)</span>
+    </div>
+    <br/><br/>
+
+    The example code is quite lengthy, and I found from some Googling that we can make use of the existing Software
+    Serial library to make the firmware significantly shorter, especially for this simple example:
+
+    <iframe src=https://create.arduino.cc/editor/hardwhere/2fe55397-26c4-4e5f-8433-4d6b9945e51d/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
+	
+  
+
+    <h3 id="reflection">reflections</h3>
+    I've been messing around with serial communication for some time to control 3D printers/Jubilee/etc, and
+    it's cool to get a closer look at what's going on here by zooming in. It definitely makes me thankful for
+    existing libraries like PySerial that makes sending and recieving messages super easy.
+    <br><br>
+    I haven't yet tested reliability of communication much- anecdotallt, I see some messages printed back twice on 
+    the same line every so often. Will have to think about how to handle this for my final project, so that 
+    behaviour is predictable.
+
+    <br><br>
+
+
+
+    
+  </div>
+</body>
+</html>
+
