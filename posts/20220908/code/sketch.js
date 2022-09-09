@@ -1,3 +1,6 @@
+// blair subbaraman
+// 2022.09.08
+
 // an ellipse of d=10 opens in illustrator at d=3.528
 // manually convert to mm with this scale factor
 k = 10/3.528
