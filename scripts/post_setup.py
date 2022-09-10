@@ -36,16 +36,35 @@ if __name__ == '__main__':
 
         new_post_html = new_post_dir + ".html"
 
+         # add a button to the previous post
+        posts = os.listdir(posts_dir)
+        sorted_posts = sorted(posts, reverse=True)
+        previous_post = f"https://bsubbaraman.github.io/daily-practice/posts/{sorted_posts[1]}/{sorted_posts[1]}.html"
+
         env = Environment(loader= FileSystemLoader("templates"))
         template = env.get_template("post-template.html")
-        content = template.render(title=title, year=year, month=month, day=day)
+        content = template.render(title=title, year=year, month=month, day=day, previous_post=previous_post)
 
+        # write out the new file
         with open(os.path.join(posts_dir, new_post_dir, new_post_html), 'w') as f:
             f.write(content)
+        
+        # and while we're at it, add this new page as the 'next' page of the previous page!
+        with open(os.path.join(posts_dir, sorted_posts[1], f"{sorted_posts[1]}.html"), 'r') as f:
+            lines = []
+            for line in f.readlines():
+                if "&lt;--previous" in line:
+                    line += f' |<a href="https://bsubbaraman.github.io/daily-practice/posts/{new_post_dir}/{new_post_html}"> next--&gt;</a>'
+                lines.append(line)
+
+        updated_content = "".join(lines)
+        with open(os.path.join(posts_dir, sorted_posts[1], f"{sorted_posts[1]}.html"), 'w') as f:
+            f.write(updated_content)
+
 
         print(f"setup post for {year}.{month}.{day}: {title}")
 
-        # TODO: update site index
+        # update the site index 
         with open("../index.html", 'r+') as f:
             full_text = ""
             for line in f.readlines():
