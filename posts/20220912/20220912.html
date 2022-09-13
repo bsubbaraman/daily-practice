@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title> phenakistoscope day 5 </title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" type="image/jpg" href="../images/favicon_j.png"/>
+<link rel="stylesheet" type="text/css" href="../../style.css">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet"> 
+</head>
+
+<body>
+  <a class="anchor" id="top"></a>
+  <div class="topnav">
+    <a id="button_purp" href="../../index.html#top">Home</a>
+  </div>
+
+  <div class="hw-content">
+    <h2><mark> phenakistoscope day 5 </mark></h2>
+    <span class="post-meta"> last edited: 2022.09.12 </span>
+
+    <br><br>
+
+    Today I put together a design from yesterday, and cut out one from
+    Saturday. Things go quicker now that I have the process under my belt.
+    A few helpful commands to convert file formats, for long-term memory:
+    <ul>
+      <li> gif from stills: <code>convert -delay 10 -loop 0 *.png out.gif</code></li>
+      <li> gif to mp4: <code>ffmpeg -f gif -i in.gif out.mp4</code></li>
+      <li> loop the mp4 <i>n</i> times: <code>ffmpeg -stream_loop n -i in.mp4 -c copy out.mp4 </code></li>
+      <li> reverse a video/gif: <code>ffmpeg -i in.{format} -vf reverse reversed.{format}</code></li>
+    </ul>
+    
+
+    <br/><br/>
+    <div class="center">
+      <img class="fig_img" src="./images/reversed.gif"><br/>
+      <span class="post-meta">phenakistoscope v3</span>
+    </div>
+    <br/><br/>
+
+
+    <h3>reflections & notes</h3>
+    Now that I've shown myself that I <i>can</i> make these, I want to focus on making some more complicated designs.
+    That could happen by adding some color to the designs. I really like
+    <a href="http://collection.cooperhewitt.org/objects/18607983">this one</a> from the Cooper Hewitt collection. I'd also like
+    to try to make these on the Cameo, since I haven't used it yet!
+
+    <br><br>
+    <hr>
+    <br>
+
+    <div id="centered">
+      <a href=https://bsubbaraman.github.io/daily-practice/posts/20220911/20220911.html>&lt;--previous</a> 
+    </div>
+
+</body>
+</html>
