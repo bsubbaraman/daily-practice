@@ -246,6 +246,8 @@ pre code {
   border: 1px solid #999;
   display: block;
   padding: 20px;
+  overflow: scroll;
+  height: 500px;
 }
 
 figure {
