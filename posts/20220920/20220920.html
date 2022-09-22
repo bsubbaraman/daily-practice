@@ -8,12 +8,12 @@
 <link rel="stylesheet" type="text/css" href="../../style.css">
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet"> 
-<link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.6.0/styles/default.min.css">
-<script src="https://unpkg.com/@highlightjs/cdn-assets@11.6.0/highlight.min.js"></script>
-<!-- and it's easy to individually load additional languages -->
-<script src="https://unpkg.com/@highlightjs/cdn-assets@11.6.0/languages/go.min.js"></script>
+<!-- <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.6.0/styles/default.min.css"> -->
+<!-- <script src="https://unpkg.com/@highlightjs/cdn-assets@11.6.0/highlight.min.js"></script> -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/highlight.min.js"></script>
 
 <script>hljs.highlightAll();</script>
+<!-- <script>hljs.initHighlightingOnLoad();</script> -->
 </head>
 
 <body>
@@ -36,7 +36,7 @@
     <h3>test board</h3>
     To get a feel for svg pcb, I messed around with the editor and made the simplest possible test board: 
     an LED + resistor. To get a sense of what the code looks like:
-      <pre><code>
+      <pre><code class="javascript">
         /* -- DECLARE_COMPONENTS -- */
 const LED_1206 = {"A":{"shape":"M -0.03699999999999999 0.03400000000000001L 0.027000000000000007 0.03400000000000001L 0.027000000000000007 -0.033999999999999996L -0.03699999999999999 -0.03400000000000001L -0.037000000000000005 0.033999999999999996","pos":[-0.055,0],"layers":["F.Cu"],"index":1},"C":{"shape":"M -0.026999999999999993 0.03400000000000001L 0.037000000000000005 0.03400000000000001L 0.037000000000000005 -0.033999999999999996L -0.026999999999999993 -0.03400000000000001L -0.027000000000000007 0.033999999999999996","pos":[0.055,0],"layers":["F.Cu"],"index":2}};
 const R_1206 = {"1":{"shape":"M -0.031999999999999994 0.03400000000000001L 0.03200000000000001 0.03400000000000001L 0.03200000000000001 -0.033999999999999996L -0.031999999999999994 -0.03400000000000001L -0.03200000000000001 0.033999999999999996","pos":[-0.06,0],"layers":["F.Cu"],"index":1},"2":{"shape":"M -0.031999999999999994 0.03400000000000001L 0.03200000000000001 0.03400000000000001L 0.03200000000000001 -0.033999999999999996L -0.031999999999999994 -0.03400000000000001L -0.03200000000000001 0.033999999999999996","pos":[0.06,0],"layers":["F.Cu"],"index":2}};
@@ -163,7 +163,7 @@ renderPCB({
 
     <div id="centered">
       <a href=https://bsubbaraman.github.io/daily-practice/posts/20220916/20220916.html>&lt;--previous</a> 
-    </div>
+ |<a href="https://bsubbaraman.github.io/daily-practice/posts/20220921/20220921.html"> next--&gt;</a> |<a href="https://bsubbaraman.github.io/daily-practice/posts/9212022/9212022.html"> next--&gt;</a>    </div>
 
 </body>
 </html>

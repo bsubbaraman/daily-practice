@@ -247,7 +247,7 @@ pre code {
   display: block;
   padding: 20px;
   overflow: scroll;
-  height: 500px;
+  height: 300px;
 }
 
 figure {
@@ -304,3 +304,4 @@ xmp {
   margin-left: 10%;
   margin-right: 10%;
 }
+

@@ -1,0 +1,3 @@
+[submodule "js/svg-pcb"]
+	path = js/svg-pcb
+	url = https://github.com/leomcelroy/svg-pcb.git
